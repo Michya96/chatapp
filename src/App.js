@@ -6,6 +6,7 @@ import axios from "axios";
 import ChatArea from "./components/ChatArea";
 import io from "socket.io-client";
 import LoginForm from "./components/LoginForm";
+require("dotenv").config();
 
 const socket = io();
 function App() {
