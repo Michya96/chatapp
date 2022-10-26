@@ -6,7 +6,6 @@ import axios from "axios";
 import ChatArea from "./components/ChatArea";
 import io from "socket.io-client";
 import LoginForm from "./components/LoginForm";
-require("dotenv").config();
 
 const socket = io();
 function App() {
@@ -30,7 +29,7 @@ function App() {
 		// console.log("messages ", messages);
 		socket.emit("send_message", textCopy, user, room);
 		// setMessages([...messages, { message: textCopy }]);
-		axios.post(process.env.API_URL, {
+		axios.post("https://michya96-messages-api.herokuapp.com/", {
 			author: user,
 			message: textCopy,
 			room: room,
@@ -38,7 +37,9 @@ function App() {
 		setText("");
 	};
 	async function fetchData() {
-		const result = await axios.get(process.env.API_URL);
+		const result = await axios.get(
+			"https://michya96-messages-api.herokuapp.com/"
+		);
 		setMessages(result.data);
 	}
 

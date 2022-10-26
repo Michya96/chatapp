@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
-require("dotenv").config();
 const LoginForm = ({ user, setUser, authenticated, setAuthenticated }) => {
 	const [inputValue, setInputValue] = useState("");
 	return (
 		<form
 			onSubmit={async (e) => {
 				e.preventDefault();
-				const result = await axios.get(process.env.API_URL);
+				const result = await axios.get(
+					"https://michya96-messages-api.herokuapp.com/"
+				);
 				if (inputValue) await setUser(inputValue);
 				setInputValue("");
 				console.log(user);
