@@ -2,9 +2,34 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.message{
+  background-color: rgb(252, 198, 128);
+  color: black;
+  margin: 20px 0;
+  max-width: 500px;
+  width:fit-content;
+  padding: 10px;
+  padding-right: 50px;
+  text-align: left;
+  border-radius: 5px;
+}
+.own-message{
+  background-color: rgb(168, 205, 238);
+  color: black;
+  margin: 20px 0;
+  max-width: 500px;
+  width:fit-content;
+  position: relative;
+  padding: 10px;
+  padding-left: 50px;
+  text-align: right;
+  border-radius: 5px;
+  align-self: flex-end;
 }
 
 @media (prefers-reduced-motion: no-preference) {
